@@ -16,7 +16,6 @@
 
     <modules>
         <module>pigeon_core</module>
+        <module>pigeon_web</module>
     </modules>
-
-
 </project>

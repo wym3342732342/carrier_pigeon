@@ -29,28 +29,7 @@ public class MessageService {
     @Autowired
     private lateinit var reactiveMongoTemplate: ReactiveMongoTemplate
 
-
-//    @Transactional
-    fun testMapperSave(message: Message): Mono<Message> {
-        return messageMapper.save(message).map {
-            1 / 0
-            it
-        }
-    }
-
-    @Transactional
-    fun testSave(message: Message): Mono<Message> {
-        return reactiveMongoTemplate.save(message).map {
-//            1/0
-            it
-        }
-    }
-
-    fun testRemoveALl():Mono<DeleteResult>{
-        return reactiveMongoTemplate.remove(Query(), Message::class.java)
-    }
-
-    fun selectAll(): Flux<Message> {
-        return messageMapper.findAll()
+    fun queryMessage(receiver: String): Flux<Message> {
+        return messageMapper.findByReceiver(receiver)
     }
 }

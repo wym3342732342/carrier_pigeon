@@ -9,8 +9,10 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.ReactiveMongoDatabaseFactory
 import org.springframework.data.mongodb.ReactiveMongoTransactionManager
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration
+import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @Configuration
+@EnableTransactionManagement
 class MongoConfiguration /*: AbstractMongoClientConfiguration()*/ {
     /**
      * 开启mongo事务
